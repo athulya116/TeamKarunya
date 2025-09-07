@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery | Team Karunya</title>
+  <meta name="description" content="Explore our photo gallery showcasing ambulance services and event setups provided by Team Karunya."/>
+  <meta name="keywords" content="Ambulance Gallery, Event Setup Photos, Team Karunya Gallery"/>
+  <meta name="robots" content="index, follow"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+
+</head>
+<body>
+
+     <!-- Top Bar -->
+   <div class="top-bar">
+     <a href="tel:+919061565108"><i class="fas fa-phone"></i> 9061 565 108</a>
+     <a href="tel:+919061121108"><i class="fas fa-phone"></i> 9061 121 108</a> <br>
+     <a href="mailto:karunyaambulance108@gmail.com"><i class="fas fa-envelope"></i> karunyaambulance108@gmail.com</a>
+   </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <!-- <i class="fas fa-ambulance icon"></i> -->
+           {% if site_logo and site_logo.logo %}
+          <img src="{{ site_logo.logo.url }}" alt="Team Karunya Logo" class="logo-img me-2" style="height:50px; width:auto;">
+          {% else %}
+            <img src="{% static 'images/default-logo.jpg' %}" alt="Default Logo" class="logo-img me-2" style="height:50px; width:auto;">
+          {% endif %}
+          <div>
+            Team Karunya
+            <span class="subtitle clr2">Ambulance and Hire Services</span>
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+  <header class="hero">
+    <h1>Gallery</h1>
+    <p>Our Services in Action</p>
+  </header>
+
+  <div class="container">
+    <div class="toggle-buttons">
+      <button id="btnAmbulance" class="active">Ambulance Services</button>
+      <button id="btnEvent">Event Services</button>
+    </div>
+
+    <!-- Ambulance Section -->
+    <div id="ambulanceSection" class="gallery-section active">
+      <div class="row g-3">
+       
+<!-- 
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/img1.jpg' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/img2.jpg' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/img3.jpg' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/img4.jpg' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/img5.jpg' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/img6.jpg' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div>
+
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/img7.jpg' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div> -->
+
+        {% for img in ambulance_images %}
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{{ img.image.url }}" alt="Ambulance Service Image" loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div>
+        {% empty %}
+        <p>No ambulance service images added yet.</p>
+        {% endfor %}
+
+    </div>
+
+    </div>
+
+    <!-- Event Section -->
+    <div id="eventSection" class="gallery-section">
+      <div class="row g-3">
+        <!-- <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/event1.png' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <img src="{% static 'images/event2.jpg' %}" alt="..." loading="lazy" class="img-fluid rounded shadow-sm" />
+        </div> -->
+        {% for img in event_images %}
+          <div class="col-6 col-md-4 col-lg-3">
+            <img src="{{ img.image.url }}" alt="Event Service Image" loading="lazy" class="img-fluid rounded shadow-sm" />
+          </div>
+        {% empty %}
+        <p>No event service images added yet.</p>
+      {% endfor %}
+
+  <!-- Add more <div class="col-6 ..."> blocks as needed -->
+       </div>
+
+    </div>
+  </div>
+
+  <footer class="footer text-center">
+  <div class="container">
+    <p class="mb-2">© 2025 Team Karunya. All rights reserved.</p>
+    <div class="social-icons mb-2">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/919061565108" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script>
+    const btnAmbulance = document.getElementById('btnAmbulance');
+    const btnEvent = document.getElementById('btnEvent');
+    const ambulanceSection = document.getElementById('ambulanceSection');
+    const eventSection = document.getElementById('eventSection');
+
+    btnAmbulance.addEventListener('click', () => {
+      btnAmbulance.classList.add('active');
+      btnEvent.classList.remove('active');
+      ambulanceSection.classList.add('active');
+      eventSection.classList.remove('active');
+    });
+
+    btnEvent.addEventListener('click', () => {
+      btnEvent.classList.add('active');
+      btnAmbulance.classList.remove('active');
+      eventSection.classList.add('active');
+      ambulanceSection.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

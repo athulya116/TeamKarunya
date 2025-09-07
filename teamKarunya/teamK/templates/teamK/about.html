@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Team Karunya</title>
+  <meta name="description" content="Learn more about Team Karunya – your trusted partner for 24/7 ambulance services, mobile mortuary, and event hire solutions in Parassala and Kaliakkavilai.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+
+</head>
+<body>
+
+   <!-- Top Bar -->
+   <div class="top-bar">
+     <a href="tel:+919061565108"><i class="fas fa-phone"></i> 9061 565 108</a>
+     <a href="tel:+919061121108"><i class="fas fa-phone"></i> 9061 121 108</a> <br>
+     <a href="mailto:karunyaambulance108@gmail.com"><i class="fas fa-envelope"></i> karunyaambulance108@gmail.com</a>
+   </div>
+   
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+     <div class="container">
+       <a class="navbar-brand" href="{% url 'index' %}">
+        {% if site_logo and site_logo.logo %}
+          <img src="{{ site_logo.logo.url }}" alt="Team Karunya Logo" class="logo-img me-2" style="height:50px; width:auto;">
+        {% else %}
+          <img src="{% static 'images/default-logo.jpg' %}" alt="Default Logo" class="logo-img me-2" style="height:50px; width:auto;">
+        {% endif %}
+         <!-- <i class="fas fa-ambulance icon"></i> -->
+         <div>
+           Team Karunya
+           <span class="subtitle clr2">Ambulance and Hire Services</span>
+         </div>
+       </a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+         <ul class="navbar-nav">
+           <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+           <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+           <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+           <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+           <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+         </ul>
+       </div>
+     </div>
+   </nav>
+
+
+  <div class="hero-section">
+    <h1>About Us</h1>
+  </div>
+
+  <div class="about-content">
+    <h2>Welcome to Team Karunya</h2>
+    <p><strong>Team Karunya</strong> is a leading and trusted provider of essential services including <strong>24/7 ambulance services</strong>, <strong>mobile mortuary transportation</strong>, and a wide range of <strong>event hire services</strong> in  <strong>Kerala</strong>. Our commitment lies in delivering top-quality, dependable, and compassionate support for emergencies, public events, and personal functions.</p>
+
+    <p>Our <strong>ambulance services</strong> are available around the clock and are equipped with modern facilities like <strong>oxygen supply</strong>, <strong>basic life support (BLS)</strong> systems, and <strong>first-aid kits</strong> to ensure rapid medical response during <strong>accidents</strong>, <strong>critical care transfers</strong>, and <strong>maternity support</strong>. We take pride in offering timely, professional, and affordable emergency medical care.</p>
+
+    <p>In addition to medical transport, Team Karunya offers <strong>mobile mortuary services</strong> that provide respectful and dignified <strong>preservation and transportation of deceased individuals</strong>. Our facilities are well-equipped to meet the cultural and logistical needs of families during times of loss.</p>
+
+    <p>Our <strong>event equipment hire services</strong> include everything you need to organize successful functions like <strong>weddings, funerals, birthdays, engagements</strong>, and more. We provide professional <strong>audio systems</strong>, <strong>LED walls</strong>, <strong>stage lights</strong>, <strong>shamiyana tents</strong>, <strong>tarpaulins</strong>, <strong>generators</strong>, <strong>fans</strong>, <strong>chairs</strong>, and <strong>tables</strong>. Our team ensures on-time delivery, proper setup, and dedicated customer service to make every occasion stress-free and memorable.</p>
+
+    <p><strong>Choose Team Karunya</strong> for the <strong>best ambulance services</strong>, <strong>mobile mortuary support</strong>, and <strong>event equipment rentals</strong> in Kerala. We combine professionalism, reliability, and compassion to serve our community with excellence.</p>
+  </div>
+
+  <!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-2">© 2025 Team Karunya. All rights reserved.</p>
+    <div class="social-icons mb-2">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/919061565108" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="24/7 Ambulance and Event Hire Services in Kerala. Book A/C Ambulances, ICU Vans, LED Wall, Shamiyana and more from Team Karunya.">
+  <title>Team Karunya - Ambulance & Event Services</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+  
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <a href="tel:+919061565108"><i class="fas fa-phone"></i> 9061 565 108</a>
+  <a href="tel:+919061121108"><i class="fas fa-phone"></i> 9061 121 108</a> <br>
+  <a href="mailto:karunyaambulance108@gmail.com"><i class="fas fa-envelope"></i> karunyaambulance108@gmail.com</a>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <!-- <i class="fas fa-ambulance icon"></i> -->
+       {% if site_logo and site_logo.logo %}
+          <img src="{{ site_logo.logo.url }}" alt="Team Karunya Logo" class="logo-img me-2" style="height:50px; width:auto;">
+        {% else %}
+          <img src="{% static 'images/default-logo.jpg' %}" alt="Default Logo" class="logo-img me-2" style="height:50px; width:auto;">
+        {% endif %}
+      <div>
+        Team Karunya
+        <span class="subtitle clr2">Ambulance and Events</span>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Welcome to Team Karunya</h1>
+      <p class="lead text-dark">Reliable Ambulance, Mobile Mortuary & Event Services 24/7</p>
+      <div class="hero-buttons">
+        <a href="tel:+919061565108" class="btn" style="background-color:#e60634;color:#fff;"><i class="fas fa-phone"></i> Call Now</a>
+        <a href="https://wa.me/919061565108" class="btn" style="background-color:#e60634;color:#fff;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{% if slider.image1 %}{{ slider.image1.url }}{% else %}/static/images/default.jpg{% endif %}" class="d-block" alt="Ambulance Service">
+        </div>
+        <div class="carousel-item">
+          <img src="{% if slider.image2 %}{{ slider.image2.url }}{% else %}/static/images/default.jpg{% endif %}" class="d-block" alt="Event Services">
+        </div>
+        <div class="carousel-item">
+          <img src="{% if slider.image3 %}{{ slider.image3.url }}{% else %}/static/images/default.jpg{% endif %}" class="d-block" alt="ICU Ambulance">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Emergency Services -->
+<section id="services" class="container">
+  <h2 class="section-title">Emergency Medical Services</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="service-card">
+        <i class="fas fa-ambulance fa-2x mb-2"></i>
+        <h5>A/C Ambulance</h5>
+        <p>Comfortable, air-conditioned ambulances for prompt medical transport.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="service-card">
+        <i class="fas fa-heartbeat fa-2x mb-2"></i>
+        <h5>ICU Ambulance</h5>
+        <p>Advanced ICU vans equipped for critical care on the move.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="service-card">
+        <i class="fas fa-truck fa-2x mb-2"></i>
+        <h5>Mobile Mortuary</h5>
+        <p>Dignified and reliable mobile mortuary services available 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Event Services -->
+<section class="container">
+  <h2 class="section-title">Event & Equipment Rentals</h2>
+  <div class="row">
+    <div class="col-md-3 mb-4">
+      <div class="service-card">
+        <i class="fas fa-music fa-2x mb-2"></i>
+        <h6>Audio & Lighting Systems</h6>
+        <p>High-quality sound and lighting for unforgettable events.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="service-card">
+        <i class="fas fa-tv fa-2x mb-2"></i>
+        <h6>LED Walls</h6>
+        <p>Vibrant LED displays to enhance your event visuals.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="service-card">
+        <i class="fas fa-campground fa-2x mb-2"></i>
+        <h6>Shamiyana, Tents & Canopies</h6>
+        <p>Elegant and sturdy setups for all outdoor events.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="service-card">
+        <i class="fas fa-chair fa-2x mb-2"></i>
+        <h6>Stage, Chairs & Tables</h6>
+        <p>Complete event furniture for seamless gatherings.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4 offset-md-3">
+      <div class="service-card">
+        <i class="fas fa-fan fa-2x mb-2"></i>
+        <h6>Fan, Cooler & Generators</h6>
+        <p>Essential equipment to keep your event comfortable and powered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Preview -->
+<section class="container my-5 text-center">
+  <h2 class="section-title">About Us</h2>
+  <p>Team Karunya is dedicated to delivering the <strong>best ambulance and event services in Kerala</strong> — with professionalism, compassion, and a quick response for every emergency or special occasion. Whether you need a fully-equipped ICU ambulance or hire services like shamiyana, LED wall, or chairs and tables, we ensure top-quality support tailored to your needs.</p>  <a href="about.html" class="btn" style="background-color:#1974d2; color:#fff; ">Read More</a>
+</section>
+
+<!-- Gallery -->
+<section class="container my-5">
+  <h2 class="section-title text-center">Gallery</h2>
+  <div class="row gallery">
+    <div class="col-6 col-md-3 mb-4"><img src="{% if homegallery.image1 %}{{ homegallery.image1.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
+    <div class="col-6 col-md-3 mb-4"><img src="{% if homegallery.image2 %}{{ homegallery.image2.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
+    <div class="col-6 col-md-3 mb-4"><img src="{% if homegallery.image3 %}{{ homegallery.image3.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
+    <div class="col-6 col-md-3 mb-4"><img src="{% if homegallery.image4 %}{{ homegallery.image4.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
+  </div>
+  <div class="text-center">
+    <a href="{% url 'gallery' %}" class="btn" style="background-color:#1974d2; color:white; ">View More</a>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="container my-5">
+  <h2 class="section-title text-center">What Our Clients Say</h2>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <div class="card p-3 shadow-sm">
+        <p>"Team Karunya reached on time during our emergency. Very professional!"</p>
+        <strong>— Akhil Raj, Trivandrum</strong>
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+      <div class="card p-3 shadow-sm">
+        <p>"We booked lights and shamiyana for a wedding. Everything was perfect."</p>
+        <strong>— Sneha B., Kollam</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="container my-5 text-center">
+  <h2 class="section-title">Contact Us</h2>
+  <h5><i class="fas fa-phone icon"></i>Call for Help:</h5>
+            <p><strong ><a href="tel:+919061565108" style="color:#1974d2 ;text-decoration:none;">+91-9061565108</a></strong></p>
+            <p><strong ><a href="tel:+919061121108" style="color:#1974d2 ;text-decoration:none;">+91-9061121108</a></strong></p>
+
+            <h5><i class="fas fa-envelope icon"></i>Mail Us:</h5>
+            <p><strong><a href="mailto:karunyaambulance108@gmail.com" style="color:#1974d2 ;text-decoration:none;">karunyaambulance108@gmail.com</a></strong></p>
+  <p>Visit us at: <strong><a href="https://www.teamkarunya.com" target="_blank" style="color:#1974d2 ; text-decoration:none;">www.teamkarunya.com</a></strong></p>
+  <a href="{% url 'contact' %}" class="btn" style="background-color:#1974d2 ;color:#fff;">Get in Touch</a>
+</section>
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <div class="container">
+    <p class="mb-2">© 2025 Team Karunya. All rights reserved.</p>
+    <div class="social-icons mb-2">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/919061565108" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

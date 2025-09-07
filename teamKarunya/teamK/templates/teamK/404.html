@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>404 • Page Not Found</title>
+  <link rel="stylesheet" href="{% static 'css/error.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Optional: your navbar (manual, no base.html) -->
+  <nav class="navbar navbar-light bg-light shadow-sm">
+    <div class="container d-flex align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="{% url 'index' %}">
+        {% if site_logo and site_logo.logo %}
+          <img src="{{ site_logo.logo.url }}" alt="Team Karunya Logo" class="logo-img me-2">
+        {% else %}
+          <img src="{% static 'images/default-logo.png' %}" alt="Logo" class="logo-img me-2">
+        {% endif %}
+        <span>Team Karunya</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- 404 body -->
+  <main class="container text-center py-5">
+    <h1 class="display-5 fw-bold">Oops! Page Not Found (404)</h1>
+    <p class="lead mt-3">
+      The page <code>{{ request.path }}</code> doesn’t exist or may have been moved.
+    </p>
+    <a href="{% url 'index' %}" class="btn btn-primary mt-3">Go to Home</a>
+  </main>
+
+  <!-- Optional footer -->
+  <footer class="footer text-center py-4">
+    <div class="container">
+      <p class="mb-0">© 2025 Team Karunya. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
