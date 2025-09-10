@@ -30,7 +30,8 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "fallback-insecure-key")
 DEBUG = False
 
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["teamkarunya.onrender.com", "localhost","teamkarunya.com"]
+
 
 
 # Application definition
