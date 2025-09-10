@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +33,8 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "fallback-insecure-key")
 DEBUG = False
 
 
-ALLOWED_HOSTS = ["teamkarunya.onrender.com", "localhost","teamkarunya.com"]
+# ALLOWED_HOSTS = ["teamkarunya.onrender.com", "localhost","teamkarunya.com"]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'teamkarunya.onrender.com','teamkarunya.com', 'www.teamkarunya.com']
 
 
 
@@ -153,10 +157,13 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']   # Your custom static files
 STATIC_ROOT = BASE_DIR / 'staticfiles'     # Where collectstatic copies everything
 
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_ROOT = '/media'
+# MEDIA_ROOT = '/media'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # if not DEBUG:
 CSRF_COOKIE_SECURE = True
