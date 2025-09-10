@@ -95,9 +95,9 @@ DATABASES = {
 
 # Cloudinary config
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('dzd7vyntn'),
-    'API_KEY': os.getenv('397832723681954'),
-    'API_SECRET': os.getenv('nTvVpAxfpAZ-5Nckc2TDFSLYKYw'),
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
 # Use Cloudinary for uploaded media
