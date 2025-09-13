@@ -105,7 +105,12 @@ CLOUDINARY_STORAGE = {
 }
 
 # Use Cloudinary for uploaded media
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+if DEBUG:
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
+else:
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
@@ -154,16 +159,25 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
-STATICFILES_DIRS = [BASE_DIR / 'static']   # Your custom static files
+# STATICFILES_DIRS = [BASE_DIR / 'static']   # Your custom static files
 STATIC_ROOT = BASE_DIR / 'staticfiles'     # Where collectstatic copies everything
 
+# if DEBUG:
+
+#     STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# else:
+
+#     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 # MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_ROOT = BASE_DIR / 'media'
 # MEDIA_ROOT = '/media'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+# MEDIA_ROOT = BASE_DIR /"teamKarunya" / "media"
+
 
 # if not DEBUG:
 CSRF_COOKIE_SECURE = True
