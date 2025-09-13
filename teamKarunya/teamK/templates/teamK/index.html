@@ -174,10 +174,10 @@
 <section class="container my-5">
   <h2 class="section-title text-center">Gallery</h2>
   <div class="row gallery">
-    <div class="col-6 col-md-3 mb-4"><img src="{% if Homegallery.image1 %}{{ Homegallery.image1.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
-    <div class="col-6 col-md-3 mb-4"><img src="{% if Homegallery.image2 %}{{ Homegallery.image2.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
-    <div class="col-6 col-md-3 mb-4"><img src="{% if Homegallery.image3 %}{{ Homegallery.image3.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
-    <div class="col-6 col-md-3 mb-4"><img src="{% if Homegallery.image4 %}{{ Homegallery.image4.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
+    <div class="col-6 col-md-3 mb-4"><img src="{% if homegallery.image1 %}{{ homegallery.image1.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
+    <div class="col-6 col-md-3 mb-4"><img src="{% if homegallery.image2 %}{{ homegallery.image2.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
+    <div class="col-6 col-md-3 mb-4"><img src="{% if homegallery.image3 %}{{ homegallery.image3.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
+    <div class="col-6 col-md-3 mb-4"><img src="{% if homegallery.image4 %}{{ homegallery.image4.url }}{% else %}/static/images/default.jpg{% endif %}" alt="Gallery Image" /></div>
   </div>
   <div class="text-center">
     <a href="{% url 'gallery' %}" class="btn" style="background-color:#1974d2; color:white; ">View More</a>
