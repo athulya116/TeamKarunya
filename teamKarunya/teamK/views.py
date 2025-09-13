@@ -7,7 +7,7 @@ from .models import HomeSliderImage, HomePageGallery,ServicesPage, GalleryImage,
 def index(request):
     slider = HomeSliderImage.objects.first()  # only one row
     gallery = HomePageGallery.objects.first()  # only one row
-    return render(request, "teamK/index.html", {"slider": slider, "Homegallery": gallery})
+    return render(request, "teamK/index.html", {"slider": slider, "homegallery": gallery})
 
 
 def gallery(request):
