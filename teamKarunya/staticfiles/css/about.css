@@ -44,7 +44,7 @@ body {
     }
 
     .hero-section {
-      background: url('./assets/images/21.jpg') center/cover no-repeat;
+      background: url('../images/21.jpg') center/cover no-repeat;
       height: 300px;
       position: relative;
       display: flex;
