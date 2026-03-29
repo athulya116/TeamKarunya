@@ -1,4 +1,4 @@
-from django.shortcuts import render
+﻿from django.shortcuts import render
 from .models import HomeSliderImage, HomePageGallery,ServicesPage, GalleryImage, SiteLogo
 
 # Create your views here.

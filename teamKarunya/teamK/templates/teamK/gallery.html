@@ -16,6 +16,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="{% static 'css/common.css' %}">
   <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
 
 </head>
@@ -169,6 +170,16 @@
       ambulanceSection.classList.remove('active');
     });
   </script>
+
+<!-- Floating Contact Bar -->
+<div class="floating-contact" id="floatingContact">
+  <a href="https://wa.me/919061565108" class="fab-button fab-whatsapp" title="WhatsApp Us">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+  <a href="tel:+919061565108" class="fab-button fab-call" title="Call Us">
+    <i class="fas fa-phone"></i> Call: 9061 565 108
+  </a>
+</div>
 
 </body>
 </html>

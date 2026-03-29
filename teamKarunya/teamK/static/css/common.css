@@ -1,0 +1,386 @@
+/* Global Styles for Team Karunya */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f4f8ff; /* Soft Medical Blue Tint */
+}
+
+a {
+    text-decoration: none !important;
+}
+
+/* Top Bar */
+.top-bar {
+    background: #003049; /* Professional Deep Navy */
+    color: #fff;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    text-align: center;
+    border-bottom: 2px solid #e1f0ff;
+}
+
+.top-bar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.top-bar a:hover {
+    color: #1974d2;
+}
+
+/* Navbar */
+.navbar {
+    padding: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: #1974d2 !important;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .subtitle {
+    font-size: 0.75rem;
+    color: #666;
+    display: block;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #333 !important;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1974d2 !important;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.contact-section {
+    padding: 100px 0;
+}
+
+.contact-heading {
+    color: #1974d2;
+    font-weight: 900;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 3.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-box h5 {
+    font-weight: 800 !important;
+    color: #003049;
+    margin-bottom: 15px;
+}
+
+/* Floating Contact Bar */
+.floating-contact {
+    position: fixed !important;
+    bottom: 30px !important;
+    right: 30px !important;
+    z-index: 9999 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: all 0.5s ease;
+}
+
+.fab-button {
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    font-size: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+    padding: 0 25px;
+    font-weight: 600;
+    gap: 10px;
+}
+
+.fab-whatsapp {
+    background: linear-gradient(135deg, #2db742 0%, #25d366 100%);
+}
+
+.fab-call {
+    background: linear-gradient(135deg, #ff4b2b 0%, #ff416c 100%);
+}
+
+.fab-button:hover {
+    transform: scale(1.05);
+    color: white !important;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* Subtle Medical Pattern */
+.bg-pattern {
+    background-image: 
+        radial-gradient(#1974d2 0.5px, transparent 0.5px), 
+        radial-gradient(#1974d2 0.5px, #f4f8ff 0.5px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(180deg, #fff 0%, #f4f8ff 100%);
+    overflow: hidden;
+}
+
+.service-card, .process-step, .contact-box, .feature-icon-box, .gallery-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid #e1f0ff !important;
+    border-radius: 15px;
+    text-align: center;
+    padding: 40px 30px;
+    height: 100%;
+    background-color: #ffffff !important; /* Keep cards white to pop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.service-card:hover, .process-step:hover, .feature-icon-box:hover, .gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(25, 116, 210, 0.2);
+    border-color: #1974d2 !important;
+}
+
+.service-card:active, .process-step:active, .feature-icon-box:active, .gallery-card:active {
+    transform: scale(0.96) translateY(-5px);
+}
+
+.gallery-card {
+    height: 400px;
+    border: 2px solid #e1f0ff !important;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: #f9fcff;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Custom Carousel Indicators */
+.custom-indicators {
+    bottom: -50px;
+}
+
+.custom-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    margin: 0 6px;
+    opacity: 1;
+}
+
+.custom-indicators .active {
+    background-color: #1974d2;
+    border-color: #e1f0ff;
+    transform: scale(1.2);
+}
+
+.service-card i, .process-step i, .feature-icon-box i {
+    color: #1974d2;
+    font-size: 2.5rem !important;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #e60634;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    z-index: 2;
+}
+
+.service-card h5, .service-card h6, .process-step h4, .feature-icon-box h5 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service-card p, .process-step p, .feature-icon-box p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Common Section Title */
+.section-title {
+    text-align: center;
+    margin: 80px 0 40px;
+    font-weight: 700;
+    color: #1974d2;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #e60634;
+    border-radius: 2px;
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: #bbb;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
+.footer p {
+    font-size: 0.9rem;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    color: #1974d2;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.hero-buttons .btn, .fab-button {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        display: none !important;
+    }
+    .floating-contact {
+        bottom: 60px !important; 
+        right: 30px !important; /* Increased margin right */
+        gap: 12px;
+    }
+    .fab-button {
+        padding: 0;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        font-size: 20px;
+        justify-content: center;
+    }
+    .fab-button span {
+        display: none;
+    }
+    .hero-content {
+        text-align: center !important; /* Center text as requested */
+    }
+    .hero-content h1, .hero-content p {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: center !important;
+        gap: 12px;
+        width: 100%;
+        padding: 0 10px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 30px !important; /* Margin bottom for hero buttons */
+    }
+    .hero-buttons .btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center !important;
+        gap: 6px; /* Space between icon and text */
+        width: 100% !important;
+        flex: 1;
+        max-width: 160px;
+        padding: 12px 5px !important;
+        font-size: 13px !important;
+    }
+}
